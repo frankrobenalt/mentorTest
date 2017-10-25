@@ -2,27 +2,51 @@ Answer each question in a written format
 
 1. What does semantic HTML mean?
 
+Semantic HTML is the implementation of "human readable" html code. A program can be written entirely using one tag that the creator wishes, but this makes it difficult for other people to read your code. Semantic HTML utilizes HTML5 elements like <footer>, <nav>, <section>, etc. in order to make code more readable and organized. Using semantic HTML can also help in SEO by making code more accurate and descriptive.
+
 2. What is the box model?
+
+The box model is how the browser renders html elements. Each element is essentially a box. I think of every box having four borders, or outlines. The innermost being the content's border, next is the padding border, next is the actual border that we can make css changes too, and then the margin border.
 
 3. What is the difference between IDs and Classes?
 
+The main difference between ID's and Classes is that ID's are unique, meaning that each element can only have one ID and that element can be the only element on the page that uses that ID. This helps in targeting specific elements through CSS and Javascript. ID's also take precedence over classes when styling in CSS. You can reuse classes on as many elements as you want and you can add multiple classes to elements. 
+
 4. What does the z-index do?
+
+The z-index refers to how elements are stacked up on the page. An element with a higher z-index will be stacked on top or in front of other elements with lesser z-indeces.
 
 5. Summarize what the keyword 'this' is used for?
 
+The this keyword is used for defining methods and functions to be used without direct knowledge of the object or context of its use. 'This' will refer to the object that invokes it unless bound to a specific object through the .bind() method. 
+
 6. What is a callback?
+
+A callback function when a function gets passed into another function as an argument. A function definition is passed into a function to be executed inside the function. We often use callbacks in this way so that we can have access to the functions scope. 
 
 7. What is a closure?
 
+A closure is used to gain access to a certain scopes variable(s). We do this by writing a function inside of another function(or invoke a call back function). This inner function creates a 'closure' so that it can have access to the outer functions scope, as well as the arguments passed into the outer function. 
+
 8. How does prototype work?
+
+The Object.prototype is at the top of the prototype pyramid. All Javascript objects inherit the Object.prototype properties and methods. The built-in prototype allows us to act on objects without writing the functions ourselves. Arrays, objects, strings, etc all have their own prototype with built-in methods. Each instance of an array has access to the array prototype as well as the Object.prototype. An important aspect of prototypes is the ability to create our own prototype methods. If we know that we will need a soecific function many times, we will create this function and attach it to the prototype that best fits our needs and can simply call this method on any new instance of the object type that we attached the prototype to.
 
 9. What is MVC?
 
+MVC stands for Model-View-Controller. In angular, it refers to how data is interacting with the viewer. There is an object that models both the controller and the view so that any changes on either side get reflected. It is essentially the flow of data between the server and the user. The model deals with the data, the view deals with what shows up on the screen and the controller acts as an agent between the two.
+
 10. What is the component lifecycle?
+
+The component lifecycle includes everything from a components inception to its demise. Understanding where a component is in its lifecycle is important and can save time and efficiency if done correctly. React components have three main phases in their lifecycles: Birth/mounting, growth/update, and death/unmounting.
 
 11. What is REST?
 
+REST is the process of performing a HTTP data request. Compared to the SOAP process, REST is much less taxing for the coder. It allows for a URL instead of needing to create an XML structure every time. It is a newer process than SOAP and was made to make the process easier.
+
 12. Name three ways of getting data from the URL using express
+
+You can direct a request through a function if it matches the URL provided as well as the type of request that it uses. These types of requests include GET, POST, and DELETE.
 
 create table users (
 id serial,
@@ -32,10 +56,18 @@ email varchar(255)
 
 12. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
--Get all users:
+-Get all users: 
 
--Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+SELECT * FROM users;
+
+-Create a new user with the name of 'your name' and an email of 'fake@fake.com': 
+
+INSERT INTO users (name, email) VALUES ('your name', 'fake@fake.com');
 
 -Update the newly created user's name to 'Bobby Boy':
 
+UPDATE users SET name = 'Bobby Boy' WHERE email = 'fake@fake.com';
+
 -Delete the newly updated user:
+
+DELETE FROM users WHERE name='Bobby Boy';
